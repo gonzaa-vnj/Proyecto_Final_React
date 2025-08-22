@@ -1,0 +1,529 @@
+/* =======================
+    RESET Y VARIABLES
+    ======================= */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  :root {
+    --purple-600: #6c63ff;
+    --purple-700: #5a54e0;
+    --violet-400: #9a8cff;
+    --soft-gray: #f4f4fb;
+    --muted: #666;
+    --card-shadow: 0 10px 35px rgba(38, 44, 70, 0.12);
+    --primary-purple: #8e44ad;
+    --light-purple: #e8d5ff;
+    --text-dark: #2c3e50;
+    --text-light: #7f8c8d;
+    --white: #ffffff;
+    --border-light: #e1e8ed;
+    --navbar-bg: #ffffff;
+    --page-bg: #f8f4f1;
+    --card-bg: #fefefe;
+    --accent-coral: #ff6b6b;
+    --accent-teal: #4ecdc4;
+    --accent-yellow: #ffe66d;
+  }
+
+  html, body, #root {
+    height: 100%;
+  }
+
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--page-bg) 0%, #f0ebe6 100%);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+
+  /* =======================
+    LOGIN / REGISTRO
+    ======================= */
+  .auth-page {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  .login-card {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--white);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  }
+
+  .login-left {
+    flex: 1;
+    background: var(--white);
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .brand-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  .brand-marker {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--primary-purple), #9b59b6);
+    box-shadow: 0 8px 20px rgba(142, 68, 173, 0.3);
+  }
+
+  .brand-name {
+    font-weight: 700;
+    color: var(--primary-purple);
+    font-size: 1.3rem;
+    letter-spacing: -0.02em;
+  }
+
+  .login-heading {
+    font-size: 2.2rem;
+    color: var(--text-dark);
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+
+  .login-sub {
+    color: var(--text-light);
+    font-size: 1rem;
+    margin-bottom: 30px;
+    max-width: 400px;
+    line-height: 1.6;
+  }
+
+  .login-form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .input-row {
+    display: flex;
+    gap: 15px;
+  }
+
+  .input-row .input-style {
+    flex: 1;
+  }
+
+  .input-style {
+    width: 100%;
+    padding: 15px 18px;
+    border-radius: 12px;
+    border: 2px solid var(--border-light);
+    font-size: 1rem;
+    background: var(--white);
+    transition: all 0.3s ease;
+    font-family: inherit;
+  }
+
+  .input-style:focus {
+    outline: none;
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 0 3px rgba(142, 68, 173, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .button-style {
+    padding: 16px 20px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: inherit;
+  }
+
+  .button-style.primary {
+    background: linear-gradient(135deg, var(--primary-purple), #9b59b6);
+    color: white;
+    box-shadow: 0 10px 30px rgba(142, 68, 173, 0.3);
+  }
+
+  .button-style.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(142, 68, 173, 0.4);
+  }
+
+  .button-style:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .error-message {
+    color: #e74c3c;
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
+
+  .link-button-style {
+    background: none;
+    border: none;
+    color: var(--primary-purple);
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .link-button-style:hover {
+    opacity: 0.8;
+  }
+
+  .switch-text {
+    margin-top: 20px;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .login-right {
+    flex: 1;
+    min-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(135deg, var(--primary-purple) 0%, #9b59b6 100%);
+    padding: 40px;
+  }
+
+  .right-bg-shape {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1), transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255,255,255,0.05), transparent 50%);
+    z-index: 1;
+  }
+
+  .hero-frame {
+    width: 80%;
+    max-width: 400px;
+    aspect-ratio: 4 / 3;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 2;
+    overflow: hidden;
+  }
+
+  .hero-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+
+  /* APP PRINCIPAL - ESTILO COLORIDO */
+  .app-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #566ac3 0%, #764ba2 100%);
+  }
+
+  /* Navbar horizontal - FONDO BLANCO */
+  .navbar-horizontal {
+    background: var(--white);
+    padding: 0 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    height: 70px;
+    justify-content: space-between;
+  }
+
+  .nav-title {
+    color: var(--primary-purple);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+
+  .nav-list-horizontal {
+    display: flex;
+    list-style: none;
+    gap: 50px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-list-horizontal li {
+    cursor: pointer;
+    padding: 25px 0;
+    font-weight: 500;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+    position: relative;
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  .nav-list-horizontal li:hover,
+  .nav-list-horizontal li.active {
+    color: var(--primary-purple);
+  }
+
+  .nav-list-horizontal li.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--primary-purple);
+    border-radius: 2px 2px 0 0;
+  }
+
+  .logout-button {
+    background: var(--primary-purple);
+    border: none;
+    color: var(--white);
+    padding: 10px 24px;
+    border-radius: 25px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  .logout-button:hover {
+    background: var(--purple-700);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(142, 68, 173, 0.3);
+  }
+
+  /* Hero Section estilo Qurate */
+  .hero-section {
+    position: relative;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(142, 68, 173, 0.8), rgba(155, 89, 182, 0.8));
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-content p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Parallax Section actualizada */
+  .parallax-section {
+    height: 500px;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .parallax-text {
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 40px;
+    line-height: 1.6;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+  }
+
+  /* Main Content */
+  .main-content {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header {
+    padding: 80px 40px 60px 40px;
+    text-align: center;
+    width: 100%;
+    color: var(--white);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .welcome {
+    font-size: 2.5rem;
+    color: var(--white);
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+
+  /* Sections */
+  .section-style {
+    background: var(--card-bg);
+    padding: 60px 40px;
+    margin: 60px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ESTILOS PARA EL FORMULARIO DE DENUNCIA EN DOS COLUMNAS */
+  .denuncia-container {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+    margin-top: 30px;
+  }
+
+  .denuncia-form-column {
+    flex: 1;
+    min-width: 400px;
+  }
+
+  .denuncia-image-column {
+    flex: 1;
+    min-width: 400px;
+  }
+
+  .denuncia-image-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .denuncia-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    color: white;
+    padding: 30px 25px 25px;
+    text-align: left;
+  }
+
+  .image-overlay h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: white;
+  }
+
+  .image-overlay p {
+    font-size: 1rem;
+    line-height: 1.5;
+    opacity: 0.9;
+    margin: 0;
+  }
+
+  .label-style {
+    display: block;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 1rem;
+  }
+
+  .label-style .input-style {
+    margin-top: 8px;
+  }
+
+  /* Responsive para el formulario de denuncia */
+  @media (max-width: 768px) {
+    .denuncia-container {
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .denuncia-form-column,
+    .denuncia-image-column {
+      min-width: auto;
+    }
+
+    .denuncia-image-container {
+      height: 300px;
+    }
+  }
